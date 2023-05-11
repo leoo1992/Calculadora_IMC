@@ -1,0 +1,112 @@
+/* Estilo para telas menores que 768px */
+@media (max-width: 767px) {
+    html,
+    body {
+      font-size: small;
+      margin: auto;
+      padding: auto;
+    }
+    #container1 {
+      font-size: small;
+      margin: auto;
+      padding: auto;
+      height: auto;
+      width: auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    #botaoCalcular {
+      font-size: small;
+      margin: auto;
+      padding: auto;
+      height: auto;
+      width: auto;
+    }
+    button {
+      font-size: small;
+      margin: auto;
+      padding: auto;
+      height: auto;
+      width: auto;
+    }
+  }
+  
+  /* Estilo para telas menores que 480px */
+  @media (max-width: 479px) {
+    html,
+    body {
+      font-size: small;
+      padding: 0%;
+      margin: 0px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    #container1,
+    #row1 {
+      font-size: small;
+      margin: 0px;
+      padding: auto;
+      height: auto;
+      width: auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    #botaoCalcular {
+      font-size: small;
+      margin: 0px;
+      padding: auto;
+      height: auto;
+      width: auto;
+    }
+    button {
+      font-size: small;
+      margin: 0px;
+      padding: auto;
+      height: auto;
+      width: auto;
+    }
+  }
+  
+  @media (max-height: 170px) {
+    #container1 {
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      font-size: 8px;
+      margin: 0px;
+      padding: 0px;
+    }
+    #container1 h6 {
+      font-size: 8px;
+      margin: 0px;
+      padding: 0px;
+    }
+    .form-label {
+      font-size: 8px;
+      margin: 0px;
+      padding: 0px;
+    }
+    #botaoCalcular {
+      font-size: 8px;
+      margin: 1px;
+      padding: 3px 3px 3px 3px;
+      height: auto;
+      width: auto;
+    }
+    button {
+      font-size: small;
+      margin: 0px;
+      padding: auto;
+      height: auto;
+      width: auto;
+      margin: 0px;
+      padding: 0px;
+    }
+    .form-range {
+      width: 50%;
+      margin: 0px;
+      padding: 0px;
+    }
+  }
+  

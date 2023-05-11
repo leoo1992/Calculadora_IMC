@@ -1,0 +1,82 @@
+#linhaIMC {
+  display: none;
+}
+
+html,
+body {
+  height: 100%;
+  background: rgb(5, 36, 0);
+  background: linear-gradient(
+    47deg,
+    rgba(5, 36, 0, 0.6615021008403361) 0%,
+    rgba(30, 121, 9, 0.35057773109243695) 35%,
+    rgba(0, 212, 255, 0.6446953781512605) 100%
+  );
+  font-size: medium;
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: white;
+}
+
+#container1 {
+  width: auto;
+  height: auto;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    47deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(101, 101, 101, 0.75) 100%
+  );
+  padding: 10px;
+  border-radius: 3%;
+  border: 1px solid black;
+  object-position: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#botaoCalcular {
+  background-color: #4caf50;
+  color: white;
+  padding: 1% 5%;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#botaoCalcular:hover {
+  background-color: lightgreen;
+  padding: 1% 10%;
+  color: black;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: #ddd;
+  border-radius: 4px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  border: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: #4caf50;
+  -webkit-appearance: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+input[type="range"]:hover input[type="range"]::-webkit-slider-thumb {
+  background-color: #3e8e41;
+}
