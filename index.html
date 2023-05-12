@@ -16,7 +16,7 @@
     <!-- CSS-->
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./responsive.css" />
-    
+
     <title>Calculadora IMC</title>
     <!-- SCRIPT JS-->
     <script src="./script.js"></script>
@@ -32,8 +32,10 @@
             <span id="pesoMostrador">0</span>
             <span>Kg</span>
             <div>
+                <input class="text-center" type="number" step="1" id="inputPeso" placeholder="0 Kg"
+                    oninput="document.getElementById('pesoMostrador').innerText = this.value; document.getElementById('PesoRange').value = this.value;" />
                 <input type="range" class="form-range start-0" min="0" max="300" step="1" id="PesoRange" value="0"
-                    oninput="document.getElementById('pesoMostrador').innerText = this.value;">
+                    oninput="document.getElementById('pesoMostrador').innerText = this.value; document.getElementById('inputPeso').value = this.value;">
             </div>
         </div>
         <!-- LINHA 2 -->
@@ -42,20 +44,24 @@
             <span id="alturaMostrador">0.00</span>
             <span>m</span>
             <div>
+                <input class="text-center" type="number" step="0.01" id="inputAltura"
+                    placeholder="0.00 m"
+                    oninput="document.getElementById('alturaMostrador').innerText = this.value; document.getElementById('AlturaRange').value = this.value;" />
                 <input type="range" class="form-range end" min="0.00" max="3.00" step="0.01" id="AlturaRange"
-                    value="0.00" oninput="document.getElementById('alturaMostrador').innerText = this.value;">
+                    value="0.00"
+                    oninput="document.getElementById('alturaMostrador').innerText = this.value; document.getElementById('inputAltura').value = this.value;">
             </div>
         </div>
         <!-- LINHA 3 -->
         <div class="row-3 align-content-center text-center align-items-center">
-            <button id="botaoCalcular" class="btn-dark rounded small" type="button" onclick="calcularIMC()">Calcular</button>
+            <button id="botaoCalcular" class="btn-dark rounded small" type="button"
+                onclick="calcularIMC()">Calcular</button>
         </div>
         <!-- LINHA 4 oculta -->
         <div id="linhaIMC" class="row-4 align-content-center text-center align-items-center">
             <label for="resultadoIMC" class="form-label"><span>IMC :</span></label>
             <span id="resultadoIMC">0.00</span>
         </div>
-
     </div>
 </body>
 

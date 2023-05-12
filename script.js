@@ -2,6 +2,10 @@ function calcularIMC() {
     // Obter os valores do peso e altura a partir dos controles deslizantes
     var peso = parseFloat(document.getElementById("PesoRange").value);
     var altura = parseFloat(document.getElementById("AlturaRange").value);
+
+    // Adicionar estas linhas de código para atualizar os valores dos inputs de acordo com o valor dos ranges
+      document.getElementById("inputPeso").value = peso;
+      document.getElementById("inputAltura").value = altura;
   
     // Verificar se o peso ou a altura é igual a zero
     if (peso === 0 || altura === 0) {
