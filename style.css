@@ -1,47 +1,35 @@
-#linhaIMC {
-  display: none;
-}
-
-html,
 body {
-  height: 100%;
+  overflow: hidden;
   background: rgb(5, 36, 0);
+  padding: 25px;
   background: linear-gradient(
     47deg,
     rgba(5, 36, 0, 0.6615021008403361) 0%,
     rgba(30, 121, 9, 0.35057773109243695) 35%,
     rgba(0, 212, 255, 0.6446953781512605) 100%
   );
-  font-size: medium;
-  width: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   color: white;
 }
 
-#container1 {
-  width: auto;
-  height: auto;
+.imc-row {
+  height: 100vh;
+}
+
+.imc-container {
   background: rgb(0, 0, 0);
   background: linear-gradient(
     47deg,
     rgba(0, 0, 0, 0.75) 0%,
     rgba(101, 101, 101, 0.75) 100%
   );
-  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 20px;
   border-radius: 3%;
   border: 1px solid black;
-  object-position: center;
-  align-items: center;
-  align-self: center;
-  align-content: center;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
-
-#botaoCalcular {
+#calcular-btn {
   background-color: #4caf50;
   color: white;
   padding: 1% 5%;
@@ -52,10 +40,17 @@ body {
   transition: background-color 0.3s ease;
 }
 
-#botaoCalcular:hover {
+#calcular-btn:hover {
   background-color: lightgreen;
-  padding: 1% 10%;
+  padding: 1% 6%;
   color: black;
+}
+
+#inputPeso,
+#inputAltura {
+  background-color: black;
+  color: white;
+  border-radius: 100px;
 }
 
 input[type="range"]:focus {
@@ -82,9 +77,26 @@ input[type="range"]:hover input[type="range"]::-webkit-slider-thumb {
   background-color: #3e8e41;
 }
 
-#inputPeso, #inputAltura{
-  width: 70%;
-  background-color: black;
-  color: white;
-  border-radius: 100px;
+.btn-close {
+  background-color: rgb(255, 0, 0);
+}
+
+.modal-content {
+  background-color: transparent;
+  border: 0px;
+}
+
+#alturaMostrador,
+#pesoMostrador {
+  display: none;
+}
+
+.top-img, img, svg {
+  border-radius: 50%;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding: 0px;
+  margin: 0px;
+
+
 }

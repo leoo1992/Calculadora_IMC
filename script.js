@@ -1,46 +1,56 @@
 function calcularIMC() {
-    // Obter os valores do peso e altura a partir dos controles deslizantes
-    var peso = parseFloat(document.getElementById("PesoRange").value);
-    var altura = parseFloat(document.getElementById("AlturaRange").value);
+  var peso = parseFloat(document.getElementById("PesoRange").value);
+  var altura = parseFloat(document.getElementById("AlturaRange").value);
+  var validarNull = false;
+  document.getElementById("inputPeso").value = peso;
+  document.getElementById("inputAltura").value = altura;
 
-    // Adicionar estas linhas de código para atualizar os valores dos inputs de acordo com o valor dos ranges
-      document.getElementById("inputPeso").value = peso;
-      document.getElementById("inputAltura").value = altura;
-  
-    // Verificar se o peso ou a altura é igual a zero
-    if (peso === 0 || altura === 0) {
-      alert("Os valores de peso e altura não podem ser nulos");
-      return;
-    }
-  
-    // Calcular o IMC (Índice de Massa Corporal)
-    var imc = peso / (altura * altura);
-    var tabelaIMC = "normal";
-  
-    //retornar dados de tabela IMC
-    if (imc < 18.5) {
-      tabelaIMC = "abaixo do peso normal";
-    } else if (imc > 24.99 && imc < 30) {
-      tabelaIMC = "com exesso de peso";
-    } else if (imc > 29.99 && imc < 35) {
-      tabelaIMC = "com obesidade classe I";
-    } else if (imc > 34.99 && imc < 40) {
-      tabelaIMC = "com obesidade classe II (severa)";
-    } else if (imc >= 40) {
-      tabelaIMC = "com obesidade classe III (mórbida)";
-    }
-  
-    // Arredondar o IMC para 2 casas decimais
-    imc = imc.toFixed(2);
-  
-    // Exibir o resultado do IMC
-    document.getElementById("resultadoIMC").innerText = imc;
-    alert(
-      "O valor do seu IMC é: " +
-        document.getElementById("resultadoIMC").innerText +
-        ". Isso indica que voce é uma pessoa " +
-        tabelaIMC +
-        "."
-    );
+  if (peso <= 0 || altura <= 0 || altura > 3 || peso > 300) {
+    var validarNull = true;
+    var modalNull =
+      "Os valores de peso e altura não estão de acordo. <br> Insira um número válido.";
+  } else {
+    var validarNull = false;
+    var modalNull = "";
   }
-  
+
+  var imc = peso / (altura * altura);
+  var tabelaIMC = "<br> Voce está com peso normal !";
+
+  if (imc < 18.5) {
+    tabelaIMC = "<br> Voce está abaixo do peso normal !";
+  } else if (imc > 24.99 && imc < 30) {
+    tabelaIMC = "<br> Voce está com exesso de peso !";
+  } else if (imc > 29.99 && imc < 35) {
+    tabelaIMC = "<br> Voce está com obesidade classe I !";
+  } else if (imc > 34.99 && imc < 40) {
+    tabelaIMC = "<br> Voce está com obesidade classe II (severa) !";
+  } else if (imc >= 40) {
+    tabelaIMC = "<br> Voce está com obesidade classe III (mórbida) !";
+  }
+
+  imc = imc.toFixed(2);
+
+  if (validarNull) {
+    document.getElementById("resultadoIMC").innerHTML = modalNull;
+
+    var myModal = new bootstrap.Modal(
+      document.getElementById("modal-imc-result"),
+      {
+        keyboard: false
+      }
+    );
+    myModal.show();
+  } else {
+    document.getElementById("resultadoIMC").innerHTML =
+      "Seu IMC é : " + imc + tabelaIMC;
+
+    var myModal = new bootstrap.Modal(
+      document.getElementById("modal-imc-result"),
+      {
+        keyboard: false
+      }
+    );
+    myModal.show();
+  }
+}
